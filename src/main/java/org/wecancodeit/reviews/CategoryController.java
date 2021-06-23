@@ -1,24 +1,25 @@
 package org.wecancodeit.reviews;
 
-
-import jdk.jfr.Category;
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
 
-public class CategoryController {
+    @Controller
+    public class CategoryController {
 
-    private CategoryStorage category;
+//    private CategoryStorage category;
     private CategoryStorage categoryStorage;
 
     private CategoryController(CategoryStorage categoryStorage){
-        this.category = categoryStorage;
+        this.categoryStorage = categoryStorage;
     }
 
-    public String displayAllCategories(Model model){
+    @RequestMapping("/HomePage")
 
+    public String displayAllCategories(Model model){
         Iterable<Category> allCategories = categoryStorage.retrieveAllCategories();
         model.addAttribute("categories", allCategories);
 
-        return "all-category";
-
+        return "HomePage";
     }
 }
