@@ -4,6 +4,11 @@ body {
     color: blanchedalmond;
 }
 
+.main{
+    display: grid;
+    grid-template-columns: 20% 60% 20%;
+}
+
 header{
     color:blanchedalmond;
     text-align: center;
@@ -13,4 +18,123 @@ header{
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+}
+
+.grid-container {
+    display: grid;
+    grid-column: 2/3;
+    justify-content: center;
+    align-items: center;
+    grid-template-columns: 33% 33% 33%;
+    grid-template-rows: 33% 33% 33%;
+    background-color: lightblue;
+    padding: 10px;
+    /* justify-content:space-around  */
+    justify-content: space-between;
+    row-gap: 60px;
+ 
+    
+    
+  }
+  .grid-item {
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    font-size: 30px;
+    text-align: center;
+  
+    
+    
+  }
+
+.grid-item-horror{
+      display: grid;
+      grid-column: 1/2;
+      grid-row: 1/2;
+/* grid-template-rows: 90% 10%; */
+
+      background-color: black;
+      font-size: 30px;
+      padding: 100px;
+      text-align: center;
+      border: cornflowerblue;
+      border-width: 5px;
+      border-style: solid;
+  }
+
+/* .example-image{
+  display: grid;
+  grid-row: 1;
+} */
+
+/* .example-cat-text{
+  display grid;
+  grid-row: 2;
+} */
+
+.grid-item-comedy{
+    display: grid;
+    grid-column: 2/3;
+    grid-row: 2/3;
+
+    background-color: black;
+    font-size: 30px;
+    padding: 100px;
+    text-align: center;
+    border: cornflowerblue;
+    border-width: 5px;
+    border-style: solid;
+  }
+.grid-item-fantasy{
+    display: grid;
+    grid-column: 1/2;
+    grid-row: 2/3;
+
+    background-color: black;
+    font-size: 30px;
+    padding: 100px;
+    text-align: center;
+    border: cornflowerblue;
+    border-width: 5px;
+    border-style: solid;
+}
+.grid-item-action{
+  display: grid;
+  grid-column: 2/3;
+  grid-row: 1/2;
+
+  background-color: black;
+  font-size: 30px;
+  padding: 100px;
+  text-align: center;
+  border: cornflowerblue;
+  border-width: 5px;
+  border-style: solid;
+}  
+.grid-item-drama{
+    display: grid;
+    grid-column: 3/4;
+    grid-row: 1/2;
+    grid-template-rows: 90% 10%;
+
+    background-color: black;
+    font-size: 30px;
+    padding: 100px;
+    text-align: center;
+    border: cornflowerblue;
+    border-width: 5px;
+    border-style: solid;
+}
+.grid-item-sliceoflife{
+  display: grid;
+  grid-column: 3/4;
+  grid-row: 2/3;
+
+  background-color: black;
+  font-size: 30px;
+  padding: 100px;
+  text-align: center;
+  border: cornflowerblue;
+  border-width: 5px;
+  border-style: solid;
 }
