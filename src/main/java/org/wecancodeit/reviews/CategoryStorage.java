@@ -1,7 +1,9 @@
 package org.wecancodeit.reviews;
 
-import jdk.jfr.Category;
+import org.springframework.stereotype.Service;
+import org.wecancodeit.reviews.repos.CategoryRepository;
 
+@Service
 public class CategoryStorage {
     private CategoryRepository categoryRepo;
 
@@ -17,12 +19,12 @@ public class CategoryStorage {
         categoryRepo.deleteById(id);
     }
 
-    public saveCategory(Category categoryToAdd){
+    public void saveCategory(Category categoryToAdd){
         categoryRepo.save(categoryToAdd);
     }
 
     public Iterable<Category> retrieveAllCategories(){
-        return categoryRepo.findAll;
+        return categoryRepo.findAll();
     }
 
 
