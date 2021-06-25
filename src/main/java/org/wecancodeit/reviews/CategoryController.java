@@ -20,6 +20,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
         Iterable<Category> allCategories = categoryStorage.retrieveAllCategories();
         model.addAttribute("categories", allCategories);
 
-        return "HomePage";
+        return "all-categories";
     }
 }
