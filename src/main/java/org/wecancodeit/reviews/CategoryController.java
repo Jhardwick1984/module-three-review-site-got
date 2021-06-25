@@ -9,8 +9,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 //    private CategoryStorage category;
     private CategoryStorage categoryStorage;
+        private CategoryStorage singleCategory;
 
-    private CategoryController(CategoryStorage categoryStorage){
+        private CategoryController(CategoryStorage categoryStorage){
         this.categoryStorage = categoryStorage;
     }
 
@@ -22,4 +23,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
         return "all-categories";
     }
+    @RequestMapping("/category/{name}")
+    public String displaySingleCategory(Model model){
+        Iterable<Category> category = categoryStorage.retrieveSingleCategory();
+        model.addAttribute("categories", singleCategory);
+
+        return "single-category";
+    }
+
 }
