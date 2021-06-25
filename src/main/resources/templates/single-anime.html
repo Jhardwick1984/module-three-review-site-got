@@ -16,7 +16,20 @@
     <h3 th:text="${anime.studioName}">Studio</h3>
     <img th:src="${anime.imageUrlAddress}">
     <p th:text="${anime.description}">General Description</p>
-    <a href="./HomePage.html">Back to Home Page</a>
+      <div class="review-form" id="review-form">
+          <h3>Slap a review in the box!</h3>
+
+          <form action="/action_page.php" id="usrform">
+              Name: <input type="text" name="usrname">
+              <input type="submit">
+          </form>
+          <br>
+          <textarea rows="4" cols="50" name="comment" form="usrform">
+       </textarea>
+
+          <p>Leave a review, comment, or general thoughts above!</p>
+      </div>
+    <a  th:href="@{/HomePage}">Back to Home Page</a>
   </main>
 </div>
 </body>
