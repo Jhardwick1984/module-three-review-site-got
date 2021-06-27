@@ -28,4 +28,7 @@ public class CategoryStorage {
     }
 
 
+    public Iterable<Category> retrieveSingleCategory() {
+        return categoryRepo.findAll();
+    }
 }
