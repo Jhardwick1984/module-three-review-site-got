@@ -14,8 +14,8 @@
     <main>
         <h2>Check out the following titles and reviews!</h2>
         <p th:text="${category.description}">Explosions! Adrenaline! Martial Arts! These titles have it all!</p>
-        <ul th:each="anime:${category.anime}">
-            <li th:text="${anime.title}"><a th:href="'/anime/'+ ${anime.title}" th:text="${anime.title}"></a></li>
+        <ul th:each="anime:${category.anime}"><a th:href="'/anime/'+ ${anime.title}" th:text="${anime.title}"></a>
+<!--            <li th:text="${anime.title}"></li>-->
 <!--            <li><a href="./full-metal-alchemist.html">Full Metal Alchemist: Brotherhood</a></li>-->
 <!--            <li><a href="./soul-eater.html">Soul Eater</a></li>-->
 <!--            <li><a href="./goblin-slayer.html">Goblin Slayer</a></li>-->
