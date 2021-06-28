@@ -2,6 +2,7 @@ package org.wecancodeit.reviews;
 
 
 import org.springframework.stereotype.Service;
+import org.wecancodeit.reviews.repos.HashtagRepository;
 //import org.wecancodeit.reviews.repos.ListRepository;
 
 @Service

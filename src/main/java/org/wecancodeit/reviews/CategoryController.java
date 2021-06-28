@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 @Controller
     public class CategoryController {
 
-//    private CategoryStorage category;
+
     private CategoryStorage categoryStorage;
         private CategoryStorage singleCategory;
 

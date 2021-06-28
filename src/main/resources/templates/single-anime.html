@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./CSS/style.css">
     <title>Anime Review Dudes</title>
 </head>
 <body>
@@ -19,7 +20,7 @@
       <div class="review-form" id="review-form">
           <h3>Slap a review in the box!</h3>
 
-          <form action="/action_page.php" id="usrform">
+          <form th:action="'/anime/'+ ${title}" id="usrform" method="post">
               Name: <input type="text" name="usrname">
               <input type="submit">
           </form>

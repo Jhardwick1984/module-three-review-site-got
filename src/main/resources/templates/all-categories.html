@@ -13,9 +13,6 @@
   <h1>The Anime Review Dudes WebSite</h1>
   <nav class="nav-bar" id="nav-bar">
       <li>
-        <a class="nav-link" href="../static/about.html">About us</a>
-      </li>
-      <li>
         <a class="nav-link" href="../static/hashtag.html">Hash Tags</a>
       </li>
     </ul>
@@ -28,6 +25,7 @@
   <div class="grid-container" id="category" >
       <div th:each="category:${categories}" th:class="'grid-item-'+${category.name.toLowerCase().replace(' ','')}"><a th:href="'/categories/'+ ${category.name}" th:text="${category.name}"></a></div>
   </div>
+    <h2>About us:</h2>
 
 </main>
 <footer><small>Got3 WCCI 2021</small></footer>

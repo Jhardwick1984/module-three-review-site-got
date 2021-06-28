@@ -38,22 +38,5 @@ import java.util.Map;
     public Anime retrieveSingleAnime(String title) {
         return animeRepo.findByTitle(title);
     }
-//   Map<String,Anime> animes;
-
-//   public AnimeStorage() {
-//       animes = new HashMap<>();
-//   }
-//
-//    public void saveAnime(Anime anime){
-//        animes.put(anime.getTitle(), anime);
-//    }
-//
-//   public Anime retrieveAnimeByTitle(String title) {
-//       return animes.get(title);
-//    }
-//
-//    public Collection<Anime> retrieveAllAnime(){
-//       return animes.values();
-//    }
 
 }

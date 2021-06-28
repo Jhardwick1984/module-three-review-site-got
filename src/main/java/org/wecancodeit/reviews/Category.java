@@ -28,11 +28,6 @@ public class Category {
         this.description = description;
     }
 
-//    public void setAnime(Collection<Anime> anime) {
-//        this.anime = anime;
-//    }
-
-
     public String getName() { return name; }
 
     public String getDescription() {
