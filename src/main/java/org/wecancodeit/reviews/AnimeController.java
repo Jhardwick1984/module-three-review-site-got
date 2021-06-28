@@ -20,7 +20,7 @@ public class AnimeController {
 
     public String displaySingleAnime(@PathVariable String title, Model model){
 
-        Anime animeToDisplay = animeStorage.retrieveAnimeByTitle(title);
+        Anime animeToDisplay = animeStorage.retrieveSingleAnime(title);
         model.addAttribute("anime", animeToDisplay);
 
         return "single-anime";

@@ -5,7 +5,6 @@ import java.util.Objects;
 
 @Entity
 public class Anime {
-
     @Id
     @GeneratedValue
     private Long id;

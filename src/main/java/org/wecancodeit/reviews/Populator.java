@@ -2,14 +2,16 @@ package org.wecancodeit.reviews;
 
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
+import org.wecancodeit.reviews.repos.AnimeRepository;
 
 @Component
 public class Populator implements CommandLineRunner {
-    private AnimeStorage animeStorage;
+    private AnimeRepository animeRepository;
     private CategoryStorage categoryStorage;
 
-    public Populator(AnimeStorage animeStorage, CategoryStorage categoryStorage) {
-        this.animeStorage = animeStorage;
+    public Populator(AnimeRepository animeRepository, CategoryStorage categoryStorage) {
+//        this.animeStorage = animeStorage;
+        this.animeRepository = animeRepository;
         this.categoryStorage = categoryStorage;
     }
 
@@ -21,6 +23,13 @@ public class Populator implements CommandLineRunner {
         Category actionCategory = new Category("Action", "Explosions!");
         Category dramaCategory = new Category("Drama", "Right in the feels.");
         Category sliceCategory = new Category("Slice of Life", "Wholesome, warm and fuzzy.");
+//        categoryStorage.saveCategory(horrorCategory);
+//        categoryStorage.saveCategory(actionCategory);
+//        categoryStorage.saveCategory(comedyCategory);
+//        categoryStorage.saveCategory(fantasyCategory);
+//        categoryStorage.saveCategory(dramaCategory);
+//        categoryStorage.saveCategory(sliceCategory);
+
 
         Anime horrorAnime1 = new Anime("Another", "P.A. Works Studio",
                 "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx11111-Y4QgkX8gJQCa.png",
@@ -54,17 +63,13 @@ public class Populator implements CommandLineRunner {
                 "At the Shinigami technical schools for weapon meisters, Maka and her living weapon, Soul Eater quest to collect 99 evil souls, and 1 witch soul.",
                 actionCategory);
         Anime actionAnime3 = new Anime("Goblin Slayer", "White Fox Studios", "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/nx101165-dVgOyGhEP4mB.jpg",
-                "A brutal world where one missed step can cost you your life, a young priestess embarks on her" +
-                        "first adventure to slay some goblins. After a tragic turn of events, she meets an adventurer known" +
-                        "only as Goblin Slayer and she learns there's more to goblin slaying than she thought.", actionCategory);
+                "A brutal world where one missed step can cost you your life, a young priestess embarks on her", actionCategory);
         Anime dramaAnime1 = new Anime("Clannad", "Kyoto Animation Studios", "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx2167-GNYaoI8DTcx4.png",
                 "High School delinquent Tomoya has taken to drifting through life aimlessly without any drive" +
                         "towards his future. One morning he encounters a strange girl who soon becomes close to him," +
                         "and changes his life forever.", dramaCategory);
         Anime dramaAnime2 = new Anime("Koe no Katachi", "Kyoto Animation Studio", "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/nx20954-RYEF5mWglzV8.png",
-                "As a child, Shouya was popular and well liked by his friends. After a new student, a deaf girl named" +
-                        "Shouko Nishimiya, transferres into his class, he takes to bullying her, resulting in growing up" +
-                        "an outcast and disliked, and in turn being bullied himself. Now grown, he seeks to make amends.",
+                "As a child, Shouya was popular and well liked by his friends. After a new student, a deaf girl named",
                 dramaCategory);
         Anime dramaAnime3 = new Anime("Ano Hi Mita Hana no Namae wo Bokutachi wa Mada Shiranai", "A-1 Pictures Studios",
                 "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx9989-qCd2RgAL0P8I.png",
@@ -76,9 +81,7 @@ public class Populator implements CommandLineRunner {
                         "When she decides it's time to change that, she joins the Light Music Club, and the friends" +
                         "and memories made along the way drive her forward.", sliceCategory);
         Anime sliceOfLifeAnime2 = new Anime("Demi-chan wa Kataritai", "A-1 Pictures Studios", "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx97592-2m8qtzJLuGY3.jpg",
-                "Tetsuo Takahashi is a high school biology teacher with a big interest in Demi-humans." +
-                        "When he discovers his school has three demis as students, plus one teacher, he sees his chance" +
-                        "to learn as much as he can, while also helping them with their life problems.", sliceCategory);
+                "Tetsuo Takahashi is a high school biology teacher with a big interest in Demi-humans.", sliceCategory);
         Anime sliceOfLifeAnime3 = new Anime("Acchi Kocchi", "AIC Studios", "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx12291-NKo7qYW674Wo.jpg",
                 "Tsumiki and Io adventure through life just one day at a time.  Enjoying every day together with friends and class-mates.",
                 sliceCategory);
@@ -89,24 +92,42 @@ public class Populator implements CommandLineRunner {
         categoryStorage.saveCategory(fantasyCategory);
         categoryStorage.saveCategory(dramaCategory);
         categoryStorage.saveCategory(sliceCategory);
-        animeStorage.saveAnime(horrorAnime1);
-        animeStorage.saveAnime(horrorAnime2);
-        animeStorage.saveAnime(horrorAnime3);
-        animeStorage.saveAnime(comedyAnime1);
-        animeStorage.saveAnime(comedyAnime2);
-        animeStorage.saveAnime(comedyAnime3);
-        animeStorage.saveAnime(fantasyAnime1);
-        animeStorage.saveAnime(fantasyAnime2);
-        animeStorage.saveAnime(fantasyAnime3);
-        animeStorage.saveAnime(actionAnime1);
-        animeStorage.saveAnime(actionAnime2);
-        animeStorage.saveAnime(actionAnime3);
-        animeStorage.saveAnime(dramaAnime1);
-        animeStorage.saveAnime(dramaAnime2);
-        animeStorage.saveAnime(dramaAnime3);
-        animeStorage.saveAnime(sliceOfLifeAnime1);
-        animeStorage.saveAnime(sliceOfLifeAnime2);
-        animeStorage.saveAnime(sliceOfLifeAnime3);
+        animeRepository.save(horrorAnime1);
+        animeRepository.save(horrorAnime2);
+        animeRepository.save(horrorAnime3);
+        animeRepository.save(comedyAnime1);
+        animeRepository.save(comedyAnime2);
+        animeRepository.save(comedyAnime3);
+        animeRepository.save(fantasyAnime1);
+        animeRepository.save(fantasyAnime2);
+        animeRepository.save(fantasyAnime3);
+        animeRepository.save(actionAnime1);
+        animeRepository.save(actionAnime2);
+        animeRepository.save(actionAnime3);
+        animeRepository.save(dramaAnime1);
+        animeRepository.save(dramaAnime2);
+        animeRepository.save(dramaAnime3);
+        animeRepository.save(sliceOfLifeAnime1);
+        animeRepository.save(sliceOfLifeAnime2);
+        animeRepository.save(sliceOfLifeAnime3);
+//        animeStorage.saveAnime(horrorAnime1);
+//        animeStorage.saveAnime(horrorAnime2);
+//        animeStorage.saveAnime(horrorAnime3);
+//        animeStorage.saveAnime(comedyAnime1);
+//        animeStorage.saveAnime(comedyAnime2);
+//        animeStorage.saveAnime(comedyAnime3);
+//        animeStorage.saveAnime(fantasyAnime1);
+//        animeStorage.saveAnime(fantasyAnime2);
+//        animeStorage.saveAnime(fantasyAnime3);
+//        animeStorage.saveAnime(actionAnime1);
+//        animeStorage.saveAnime(actionAnime2);
+//        animeStorage.saveAnime(actionAnime3);
+//        animeStorage.saveAnime(dramaAnime1);
+//        animeStorage.saveAnime(dramaAnime2);
+//        animeStorage.saveAnime(dramaAnime3);
+//        animeStorage.saveAnime(sliceOfLifeAnime1);
+//        animeStorage.saveAnime(sliceOfLifeAnime2);
+//        animeStorage.saveAnime(sliceOfLifeAnime3);
 
     }
 }

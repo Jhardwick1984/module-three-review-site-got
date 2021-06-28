@@ -2,9 +2,11 @@ package org.wecancodeit.reviews;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
-    @Controller
+@Controller
     public class CategoryController {
 
 //    private CategoryStorage category;
@@ -23,10 +25,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
         return "all-categories";
     }
-    @RequestMapping("/category/{name}")
-    public String displaySingleCategory(Model model){
-        Iterable<Category> category = categoryStorage.retrieveSingleCategory();
-        model.addAttribute("categories", singleCategory);
+    @RequestMapping("/categories/{name}")
+    public String displaySingleCategory(@PathVariable String name, Model model){
+        Category category = categoryStorage.retrieveSingleCategory(name);
+
+        model.addAttribute("category", category);
 
         return "single-category";
     }
