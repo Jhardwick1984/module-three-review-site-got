@@ -30,6 +30,16 @@
 
           <p>Leave a review, comment, or general thoughts above!</p>
       </div>
+      <div class="hashtag-form">
+          <h3>Add a Hashtag!</h3>
+
+          <form th:action="'/anime/'+ ${title}" class="info" method="post">Type your hashtag & click enter.
+          <input type="text" id="hashtags" autocomplete="off">
+            <input type="submit">
+          </form>
+          <div class="tag-container">
+          </div>
+      </div>
     <a  th:href="@{/HomePage}">Back to Home Page</a>
   </main>
 </div>
