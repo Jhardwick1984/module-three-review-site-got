@@ -5,6 +5,7 @@ import java.util.Objects;
 
 @Entity
 public class Anime {
+    
     @Id
     @GeneratedValue
     private Long id;
@@ -14,20 +15,24 @@ public class Anime {
     private String imageUrlAddress;
     private String description;
 
+
     @ManyToOne
     private Category category;
+
+
 
     protected Anime() {
 
     }
 
 
-    public Anime(String inTitle, String inStudioName, String imageUrlAddress, String description, Category category){
+    public Anime(String inTitle, String inStudioName, String imageUrlAddress, String description, Category category, Hashtag hashtag){
     this.title = inTitle;
     this.studioName = inStudioName;
     this.imageUrlAddress = imageUrlAddress;
     this.description = description;
     this.category = category;
+
     }
 
     public String getTitle() {

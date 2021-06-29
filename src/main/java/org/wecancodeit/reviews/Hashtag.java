@@ -3,6 +3,7 @@ package org.wecancodeit.reviews;
 
 import javax.persistence.*;
 import java.util.Collection;
+import java.util.Objects;
 import java.util.Set;
 
 @Entity
@@ -13,12 +14,10 @@ public class Hashtag {
     private Long id;
     private String name;
 
-    @Lob
-    private String description;
 
 
-    @OneToMany(mappedBy = "Hashtag")
 
+    @OneToMany
     private Collection<Hashtag> hashtags;
 
 
@@ -26,25 +25,44 @@ public class Hashtag {
 
     }
 
-    public Hashtag(Long id, String name, String description, Set<Hashtag> hashtags) {
-        this.id = id;
+    public Hashtag(String name) {
         this.name = name;
-        this.description = description;
-        this.hashtags = hashtags;
+
     }
 
     public Long getId() {
         return id;
     }
 
+    public Collection<Hashtag> getHashtags() { return hashtags; }
 
     public String getName() {
         return name;
     }
 
-    public String getDescription() {
-        return description;
+
+    @Override
+    public String toString() {
+        return "Hashtag{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                '}';
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Hashtag hashtag = (Hashtag) o;
+        return Objects.equals(id, hashtag.id) && Objects.equals(name, hashtag.name);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, name);
+    }
+
+
 }
 
 

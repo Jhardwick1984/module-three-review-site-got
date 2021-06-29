@@ -13,7 +13,7 @@
   <h1>The Anime Review Dudes WebSite</h1>
   <nav class="nav-bar" id="nav-bar">
       <li>
-        <a class="nav-link" href="../static/hashtag.html">Hash Tags</a>
+        <a class="nav-link" th:href="'/hashtag-section/'">Hash Tags</a>
       </li>
     </ul>
   </nav>
@@ -26,7 +26,9 @@
       <div th:each="category:${categories}" th:class="'grid-item-'+${category.name.toLowerCase().replace(' ','')}"><a th:href="'/categories/'+ ${category.name}" th:text="${category.name}"></a></div>
   </div>
     <h2>About us:</h2>
-
+    <p>We're three dudes who enjoy Anime, and thought it was time to share our thoughts on some of our favorite series
+    <br>and movies.  Check out our work here on this site, leave a comment, add some hashtags, or check our some of our
+    <br>other individual works from the links below! Thank you!</p>
 </main>
 <footer><small>Got3 WCCI 2021</small></footer>
 </div>
