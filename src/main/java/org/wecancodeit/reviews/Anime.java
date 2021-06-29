@@ -1,7 +1,9 @@
 package org.wecancodeit.reviews;
 
 import javax.persistence.*;
+import java.util.Collection;
 import java.util.Objects;
+import java.util.Set;
 
 @Entity
 public class Anime {
@@ -19,20 +21,21 @@ public class Anime {
     @ManyToOne
     private Category category;
 
-
+    @ManyToMany(mappedBy = "anime")
+    private Collection<Hashtag> hashtags;
 
     protected Anime() {
 
     }
 
 
-    public Anime(String inTitle, String inStudioName, String imageUrlAddress, String description, Category category, Hashtag hashtag){
+    public Anime(String inTitle, String inStudioName, String imageUrlAddress, String description, Category category, Hashtag... hashtags){
     this.title = inTitle;
     this.studioName = inStudioName;
     this.imageUrlAddress = imageUrlAddress;
     this.description = description;
     this.category = category;
-
+    this.hashtags = Set.of(hashtags);
     }
 
     public String getTitle() {
@@ -52,6 +55,8 @@ public class Anime {
     }
 
     public Category getCategory() { return category; }
+
+    public Collection<Hashtag> getHashtag() { return hashtags; }
 
     public Long getId() {
         return id;

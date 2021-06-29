@@ -25,12 +25,28 @@ public class Populator implements CommandLineRunner {
         Category dramaCategory = new Category("Drama", "These will get you right in the feels, bring tissues!");
         Category sliceCategory = new Category("Slice of Life", "Wholesome, warm and fuzzy.");
 
-        Hashtag horrorHashtag = new Hashtag("#Horror");
-        Hashtag comedyHashtag = new Hashtag("#Comedy");
-        Hashtag fantasyHashtag = new Hashtag("#Fantasy");
-        Hashtag actionHashtag = new Hashtag("#Action");
-        Hashtag dramaHashtag = new Hashtag("#Drama");
-        Hashtag sliceHashtag = new Hashtag("#Sliceoflife");
+        categoryStorage.saveCategory(horrorCategory);
+        categoryStorage.saveCategory(actionCategory);
+        categoryStorage.saveCategory(comedyCategory);
+        categoryStorage.saveCategory(fantasyCategory);
+        categoryStorage.saveCategory(dramaCategory);
+        categoryStorage.saveCategory(sliceCategory);
+
+
+
+        Hashtag horrorHashtag = new Hashtag("Horror");
+        Hashtag comedyHashtag = new Hashtag("Comedy");
+        Hashtag fantasyHashtag = new Hashtag("Fantasy");
+        Hashtag actionHashtag = new Hashtag("Action");
+        Hashtag dramaHashtag = new Hashtag("Drama");
+        Hashtag sliceHashtag = new Hashtag("Sliceoflife");
+
+        hashtagStorage.saveHashtag(horrorHashtag);
+        hashtagStorage.saveHashtag(comedyHashtag);
+        hashtagStorage.saveHashtag(actionHashtag);
+        hashtagStorage.saveHashtag(fantasyHashtag);
+        hashtagStorage.saveHashtag(dramaHashtag);
+        hashtagStorage.saveHashtag(sliceHashtag);
 
 
         Anime horrorAnime1 = new Anime("Another", "P.A. Works Studio",
@@ -86,19 +102,7 @@ public class Populator implements CommandLineRunner {
                 "Tsumiki and Io adventure through life just one day at a time.  Enjoying every day together with friends and class-mates.",
                 sliceCategory, sliceHashtag);
 
-        categoryStorage.saveCategory(horrorCategory);
-        categoryStorage.saveCategory(actionCategory);
-        categoryStorage.saveCategory(comedyCategory);
-        categoryStorage.saveCategory(fantasyCategory);
-        categoryStorage.saveCategory(dramaCategory);
-        categoryStorage.saveCategory(sliceCategory);
 
-        hashtagStorage.saveHashtag(horrorHashtag);
-        hashtagStorage.saveHashtag(comedyHashtag);
-        hashtagStorage.saveHashtag(actionHashtag);
-        hashtagStorage.saveHashtag(fantasyHashtag);
-        hashtagStorage.saveHashtag(dramaHashtag);
-        hashtagStorage.saveHashtag(sliceHashtag);
 
         animeRepository.save(horrorAnime1);
         animeRepository.save(horrorAnime2);

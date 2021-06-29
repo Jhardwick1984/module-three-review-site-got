@@ -5,6 +5,5 @@ import org.wecancodeit.reviews.Anime;
 
 
 public interface AnimeRepository extends CrudRepository<Anime,Long> {
-
     Anime findByTitle(String title);
 }
