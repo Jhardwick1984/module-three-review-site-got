@@ -11,7 +11,7 @@ import java.util.Objects;
 public class Category {
     @Id
     @GeneratedValue
-    private Long Id;
+    private Long id;
 
     private String name;
     private String description;
@@ -37,13 +37,13 @@ public class Category {
     public Collection<Anime> getAnime() { return anime; }
 
     public Long getId() {
-        return Id;
+        return id;
     }
 
     @Override
     public String toString() {
         return "Category{" +
-                "Id=" + Id +
+                "Id=" + id +
                 ", name='" + name + '\'' +
                 ", description='" + description + '\'' +
                 '}';
@@ -54,11 +54,11 @@ public class Category {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Category category = (Category) o;
-        return Objects.equals(Id, category.Id) && Objects.equals(name, category.name) && Objects.equals(description, category.description);
+        return Objects.equals(id, category.id) && Objects.equals(name, category.name) && Objects.equals(description, category.description);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(Id, name, description);
+        return Objects.hash(id, name, description);
     }
 }

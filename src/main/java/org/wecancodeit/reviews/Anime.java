@@ -21,7 +21,7 @@ public class Anime {
     @ManyToOne
     private Category category;
 
-    @ManyToMany(mappedBy = "anime")
+    @ManyToMany
     private Collection<Hashtag> hashtags;
 
     protected Anime() {

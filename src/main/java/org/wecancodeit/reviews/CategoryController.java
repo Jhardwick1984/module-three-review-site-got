@@ -6,6 +6,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import javax.xml.catalog.Catalog;
+
 @Controller
     public class CategoryController {
 
@@ -26,9 +28,9 @@ import org.springframework.web.bind.annotation.RequestParam;
         return "all-categories";
     }
     @RequestMapping("/categories/{name}")
-    public String displaySingleCategory(@PathVariable String name, Model model){
+    public String displaySingleCategory(@PathVariable String name , Model model){
         Category category = categoryStorage.retrieveSingleCategory(name);
-
+//        Category gethashtag= categoryStorage.retrieveCategoryById(id);
         model.addAttribute("category", category);
 
         return "single-category";

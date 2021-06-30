@@ -14,7 +14,7 @@
   </header>
   <main>
     <h2>Pick the anime with the tag you chose!</h2>
-    <ul th:each="anime:${hashtag.hashtags}"><a th:href="'/anime/' +${anime.title}" th:text="${anime.title}"></a></ul>
+    <ul th:each="anime:${hashtag.anime}"><a th:href="'/anime/' +${anime.title}" th:text="${anime.title}"></a></ul>
   </main>
 </div>
 </body>

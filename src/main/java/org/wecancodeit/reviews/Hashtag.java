@@ -17,14 +17,8 @@ public class Hashtag {
 
 
 
-    @ManyToMany
-    //@OneToMany
+    @ManyToMany (mappedBy = "hashtags")
     private Collection<Anime> anime;
-
-//    public void setHashtags(Collection<Hashtag> hashtags) {
-//        this.hashtags = hashtags;
-//    }
-
 
     protected Hashtag(){
 
@@ -39,7 +33,7 @@ public class Hashtag {
         return id;
     }
 
-    public Collection<Anime> getHashtags() { return anime; }
+    public Collection<Anime> getAnime() { return anime; }
 
     public String getName() {
         return name;
