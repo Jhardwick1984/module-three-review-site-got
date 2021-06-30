@@ -24,6 +24,9 @@ public class Anime {
     @ManyToMany
     private Collection<Hashtag> hashtags;
 
+    @OneToMany
+    private Collection<Comment> comment;
+
     protected Anime() {
 
     }
