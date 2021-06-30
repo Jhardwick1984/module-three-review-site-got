@@ -15,20 +15,20 @@ public class Comment {
     @GeneratedValue
     private Long id;
 
-    private String name;
+    private String usrname;
     private String comment;
 
     @ManyToOne
-    private Collection<Anime> anime;
+    private Anime anime;
 
     protected Comment() {
 
     }
 
 
-    public Comment(Long id, String name, String comment, Collection<Anime> anime) {
-        this.id = id;
-        this.name = name;
+    public Comment(String usrname, String comment, Anime anime) {
+//        this.id = id;
+        this.usrname = usrname;
         this.comment = comment;
         this.anime = anime;
     }
@@ -38,14 +38,14 @@ public class Comment {
     }
 
     public String getName() {
-        return name;
+        return usrname;
     }
 
     public String getComment() {
         return comment;
     }
 
-    public Collection<Anime> getAnime() {
+    public Anime getAnime() {
         return anime;
     }
 
@@ -53,10 +53,8 @@ public class Comment {
     @Override
     public String toString() {
         return "Comment{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
+                "name='" + usrname + '\'' +
                 ", comment='" + comment + '\'' +
-                ", anime=" + anime +
                 '}';
 
     }
@@ -66,12 +64,12 @@ public class Comment {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Comment comment1 = (Comment) o;
-        return Objects.equals(id, comment1.id) && Objects.equals(name, comment1.name) && Objects.equals(comment, comment1.comment);
+        return Objects.equals(id, comment1.id) && Objects.equals(usrname, comment1.usrname) && Objects.equals(comment, comment1.comment);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, comment);
+        return Objects.hash(id, usrname, comment);
     }
 }
 

@@ -33,11 +33,11 @@ public class HashtagController{
     public String displaySingleHashtag(@PathVariable String name, String title, Model model){
 
 
-        Anime animeToDisplay = animeStorage.retrieveSingleAnime(title);
-        model.addAttribute("anime", animeToDisplay);
-
-        Iterable<Anime> allAnime = animeStorage.retrieveAllAnime();
-        model.addAttribute("anime", allAnime);
+//        Anime animeToDisplay = animeStorage.retrieveSingleAnime(title);
+//        model.addAttribute("anime", animeToDisplay);
+//
+//        Iterable<Anime> allAnime = animeStorage.retrieveAllAnime();
+//        model.addAttribute("anime", allAnime);
 
         Hashtag hashtag = hashtagStorage.retrieveSingleHashtag(name);
         model.addAttribute("hashtag", hashtag);

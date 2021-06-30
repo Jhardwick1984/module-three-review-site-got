@@ -24,8 +24,8 @@ public class Anime {
     @ManyToMany
     private Collection<Hashtag> hashtags;
 
-    @OneToMany
-    private Collection<Comment> comment;
+    @OneToMany(mappedBy = "anime")
+    private Collection<Comment> comments;
 
     protected Anime() {
 
@@ -39,6 +39,14 @@ public class Anime {
     this.description = description;
     this.category = category;
     this.hashtags = Set.of(hashtags);
+    }
+
+    public void addComment(Comment comment) {
+        comments.add(comment);
+    }
+
+    public void addHashtag(Hashtag hashtag) {
+        hashtags.add(hashtag);
     }
 
     public String getTitle() {
@@ -63,6 +71,14 @@ public class Anime {
 
     public Long getId() {
         return id;
+    }
+
+    public Collection<Hashtag> getHashtags() {
+        return hashtags;
+    }
+
+    public Collection<Comment> getComments() {
+        return comments;
     }
 
     @Override
