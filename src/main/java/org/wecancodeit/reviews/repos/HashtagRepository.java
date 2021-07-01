@@ -4,5 +4,5 @@ import org.springframework.data.repository.CrudRepository;
 import org.wecancodeit.reviews.Hashtag;
 
 public interface HashtagRepository extends CrudRepository<Hashtag,Long> {
-   public Hashtag findByName(String name);
+    Hashtag findByName(String name);
 }

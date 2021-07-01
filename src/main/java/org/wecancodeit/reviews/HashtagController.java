@@ -3,6 +3,7 @@ package org.wecancodeit.reviews;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -32,7 +33,7 @@ public class HashtagController{
     }
 
 
-    @RequestMapping("/list/{name}")
+    @GetMapping("/list/{name}")
     public String displaySingleHashtag(@PathVariable String name, String title, Model model){
 
         Hashtag hashtag = hashtagStorage.retrieveSingleHashtag(name);
@@ -45,10 +46,8 @@ public class HashtagController{
 
     public String addHashtagToAnime(@PathVariable String title, Model model, String hashtags){
         Anime animeToDisplay = animeStorage.retrieveSingleAnime(title);
-        Hashtag hashtagToAdd = new Hashtag(hashtags);
-            hashtagRepo.save(hashtagToAdd);
-            animeStorage.saveAnime(animeToDisplay);
-        model.addAttribute("hashtag", hashtagToAdd);
+        Hashtag existingHashtag = hashtagStorage.retrieveSingleHashtag(hashtags);
+
 
         model.addAttribute("anime", animeToDisplay);
 

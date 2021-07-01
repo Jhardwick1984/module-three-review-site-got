@@ -27,7 +27,6 @@ public class Comment {
 
 
     public Comment(String usrname, String comment, Anime anime) {
-//        this.id = id;
         this.usrname = usrname;
         this.comment = comment;
         this.anime = anime;

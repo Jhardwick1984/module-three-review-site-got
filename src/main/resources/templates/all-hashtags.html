@@ -1,20 +1,20 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="../CSS/style.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/style.css">
     <title>Anime Review Dudes</title>
 </head>
 <body>
 <main>
-  <h2>Pick the #Hashtag you like best!</h2>
-  <ul th:each="hashtags:${hashtags}">
-    <a th:href="'/list/'+ ${hashtags.name}" th:text="'#' +${hashtags.name}"></a>
-  </ul>
-  <a th:href="@{/HomePage}">Back to Home Page</a>
-  </div>
+    <h2>Pick the #Hashtag you like best!</h2>
+    <ul th:each="hashtags:${hashtags}">
+        <a th:href="'/list/'+ ${hashtags.name}" th:text="'#' +${hashtags.name}"></a>
+    </ul>
+    <a th:href="@{/HomePage}">Back to Home Page</a>
+    </div>
 </main>
 <footer><small>Got3 WCCI 2021</small></footer>
 </body>
