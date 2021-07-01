@@ -16,7 +16,6 @@ public class Hashtag {
 
 
 
-
     @ManyToMany (mappedBy = "hashtags")
     private Collection<Anime> anime;
 

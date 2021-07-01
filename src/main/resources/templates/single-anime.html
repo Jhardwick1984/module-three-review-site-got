@@ -27,18 +27,28 @@
           <br>
           <textarea rows="4" cols="50" name="comment" form="usrform">
        </textarea>
-
-          <p>Leave a review, comment, or general thoughts above!</p>
       </div>
+     <div>
+         <h3>Reviews/Comments:</h3>
+         <ul th:each="comment:${anime.comments}">
+             <li th:text="${comment.comment} + '-' + ${comment.name}"></li>
+         </ul>
+        </div>
       <div class="hashtag-form">
-          <h3>Add a Hashtag!</h3>
+          <h3>Hashtags!</h3>
+          <ul>
+              <li th:each="hashtags:${anime.hashtags}"><a th:href="'/list/'+ ${hashtags.name}" th:text="'#' +${hashtags.name}"></a></li>
+          </ul>
+          <h2>Add Your Own Hashtag!</h2>
 
-          <form th:action="'/anime/'+ ${title}" class="info" method="post">Type your hashtag & click enter.
-          <input type="text" id="hashtags" autocomplete="off">
+          <form th:action="'/anime/'+ ${title}" class="info" method="post">Type to add a hashtag!
+          <input type="text" name="hashtags" autocomplete="off">
             <input type="submit">
-          </form>
+
           <div class="tag-container">
+<!--              <ul th:each="hashtag:${anime.hashtag}"></ul>-->
           </div>
+          </form>
       </div>
     <a  th:href="@{/HomePage}">Back to Home Page</a>
   </main>

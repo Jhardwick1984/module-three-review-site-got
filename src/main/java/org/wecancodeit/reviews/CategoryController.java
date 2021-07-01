@@ -30,7 +30,6 @@ import javax.xml.catalog.Catalog;
     @RequestMapping("/categories/{name}")
     public String displaySingleCategory(@PathVariable String name , Model model){
         Category category = categoryStorage.retrieveSingleCategory(name);
-//        Category gethashtag= categoryStorage.retrieveCategoryById(id);
         model.addAttribute("category", category);
 
         return "single-category";
