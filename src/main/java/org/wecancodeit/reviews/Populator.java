@@ -53,7 +53,7 @@ public class Populator implements CommandLineRunner {
                 "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx11111-Y4QgkX8gJQCa.png",
                 "High school students suffer from a terrible, class-wide curse. The new kid in class finds out the hard way.",
                 horrorCategory, horrorHashtag);
-        Anime horrorAnime2 = new Anime("Corpse-Party", "Asread Studios", "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/b15037-3f0LKcbv4tM2.jpg",
+        Anime horrorAnime2 = new Anime("Corpse-Party", "Asread Studios", "https://bestsimilar.com/img/movie/thumb/dc/59269.jpg",
                 "Nine friends get sucked into an alternate reality containing a haunted elementary school. They're forced to break the curse before suffering horrible deaths!",
                 horrorCategory, horrorHashtag);
         Anime horrorAnime3 = new Anime("Deadman Wonderland", "Manglobe Studio", "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx6880-4aWqFNTwzqp0.png",
