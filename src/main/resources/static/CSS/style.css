@@ -204,7 +204,10 @@ header{
 }
 footer{
   position: relative;
+<<<<<<< HEAD
   bottom: 0%;
+=======
+>>>>>>> 4053cdc9a2ac66e73549bc6191b8b0b4bfca19ee
 }
 
 .red-text{
@@ -215,4 +218,13 @@ footer{
 }
 .fantasy-text{
   color: blueviolet;
+}
+.comedy-text{
+  color: burlywood;
+}
+.drama-text{
+  color: rgb(79, 119, 106);
+}
+.sOL-text{
+  color: blanchedalmond;
 }
