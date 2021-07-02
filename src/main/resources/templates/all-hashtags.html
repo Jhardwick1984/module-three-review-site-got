@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../CSS/style.css">
+    <link rel="stylesheet" th:href="@{../CSS/style.css}">
     <title>Anime Review Dudes</title>
 </head>
 <body>
@@ -14,7 +14,6 @@
         <a th:href="'/list/'+ ${hashtags.name}" th:text="'#' +${hashtags.name}"></a>
     </ul>
     <a th:href="@{/HomePage}">Back to Home Page</a>
-    </div>
 </main>
 <footer><small>Got3 WCCI 2021</small></footer>
 </body>
