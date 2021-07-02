@@ -17,7 +17,7 @@ body {
 header{
     background-image: url(../css-images/animebanner3.jpeg);
     /*background-color: #314e8d;*/
-    color: #f51010;
+    color: #43e821;
     text-align: center;
 }
 
@@ -205,6 +205,12 @@ header{
   position: absolute;
   bottom: 0%;
 }
+
+.profiles {
+    display: flex;
+    justify-content: space-evenly;
+}
+
 footer{
     background-color: #314e8d;
   position: relative;

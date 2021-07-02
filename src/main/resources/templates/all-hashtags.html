@@ -9,6 +9,7 @@
 </head>
 <body>
 <main>
+    <img src="https://media.giphy.com/media/10cPOH26Lb1LkA/giphy.gif">
     <h2>Pick the #Hashtag you like best!</h2>
     <ul th:each="hashtags:${hashtags}">
         <a th:href="'/list/'+ ${hashtags.name}" th:text="'#' +${hashtags.name}"></a>
