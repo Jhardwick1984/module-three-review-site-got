@@ -15,11 +15,14 @@ body {
 }
 
 header{
-    color:blanchedalmond;
+    background-image: url(../css-images/animebanner3.jpeg);
+    /*background-color: #314e8d;*/
+    color: #f51010;
     text-align: center;
 }
 
 .nav-bar{
+    color: antiquewhite;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -203,11 +206,10 @@ header{
   bottom: 0%;
 }
 footer{
+    background-color: #314e8d;
   position: relative;
-<<<<<<< HEAD
+    text-align: center;
   bottom: 0%;
-=======
->>>>>>> 4053cdc9a2ac66e73549bc6191b8b0b4bfca19ee
 }
 
 .red-text{

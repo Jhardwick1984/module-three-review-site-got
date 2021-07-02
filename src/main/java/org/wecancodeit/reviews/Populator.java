@@ -18,12 +18,12 @@ public class Populator implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        Category horrorCategory = new Category("Horror", "These titles are scary, gory, or slightly disturbing!");
-        Category comedyCategory = new Category("Comedy", "Guaranteed to give you a good chuckle!");
-        Category fantasyCategory = new Category("Fantasy", "Dragons, swords, magic. We got them all!");
-        Category actionCategory = new Category("Action", "So action-packed!");
-        Category dramaCategory = new Category("Drama", "These will get you right in the feels, bring tissues!");
-        Category sliceCategory = new Category("Slice of Life", "Wholesome, warm and fuzzy.");
+        Category horrorCategory = new Category("Horror", "These titles are scary, gory, or slightly disturbing!", "https://media.tenor.com/images/9e342b3c4a9fc5e3e28e3569699d511e/tenor.gif");
+        Category comedyCategory = new Category("Comedy", "Guaranteed to give you a good chuckle!", "https://media1.tenor.com/images/64c8972b9f422740a425628cfc1c2423/tenor.gif?itemid=13893181");
+        Category fantasyCategory = new Category("Fantasy", "Dragons, swords, magic. We got them all!", "https://i.pinimg.com/originals/1b/9c/7b/1b9c7b6b0437552e79f88e1808a6f3af.gif");
+        Category actionCategory = new Category("Action", "So action-packed!", "https://i.gifer.com/3Ig1.gif");
+        Category dramaCategory = new Category("Drama", "These will get you right in the feels, bring tissues!", "https://i.pinimg.com/originals/cc/7d/8e/cc7d8e79b28538bfcb2073ea4a525a42.gif");
+        Category sliceCategory = new Category("Slice of Life", "Wholesome, warm and fuzzy.", "https://64.media.tumblr.com/efef02b10473e96b049f85f464f17086/tumblr_p81jyn5vEP1xqm3cdo1_400.gifv");
 
         categoryStorage.saveCategory(horrorCategory);
         categoryStorage.saveCategory(actionCategory);
