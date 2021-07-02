@@ -15,11 +15,14 @@ body {
 }
 
 header{
-    color:blanchedalmond;
+    background-image: url(../css-images/animebanner3.jpeg);
+    /*background-color: #314e8d;*/
+    color: #43e821;
     text-align: center;
 }
 
 .nav-bar{
+    color: antiquewhite;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -202,7 +205,34 @@ header{
   position: absolute;
   bottom: 0%;
 }
+
+.profiles {
+    display: flex;
+    justify-content: space-evenly;
+}
+
 footer{
-  position: absolute;
+    background-color: #314e8d;
+  position: relative;
+    text-align: center;
   bottom: 0%;
+}
+
+.red-text{
+  color: red;
+}
+.action-text{
+  color: rgb(70, 59, 59);
+}
+.fantasy-text{
+  color: blueviolet;
+}
+.comedy-text{
+  color: burlywood;
+}
+.drama-text{
+  color: rgb(79, 119, 106);
+}
+.sOL-text{
+  color: blanchedalmond;
 }

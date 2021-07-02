@@ -4,48 +4,54 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../CSS/style.css">
+    <link rel="stylesheet" th:href="@{/CSS/single-anime.css}">
     <title>Anime Review Dudes</title>
 </head>
 <body>
 <div class="container">
-  <header>
-    <h1>Anime Review Dudes Presents:</h1>
-  </header>
-  <main>
-    <h2 th:text="${anime.title}">Title</h2>
-    <h3 th:text="${anime.studioName}">Studio</h3>
-    <img th:src="${anime.imageUrlAddress}">
-    <p th:text="${anime.description}">General Description</p>
-      <div class="review-form" id="review-form">
-          <h3>Slap a review in the box!</h3>
+    <header>
+        <h1>Anime Review Dudes Presents:</h1>
+    </header>
+    <main>
+        <h2 th:text="${anime.title}">Title</h2>
+        <h3 th:text="${anime.studioName}">Studio</h3>
+        <img th:src="${anime.imageUrlAddress}">
+        <p th:text="${anime.description}">General Description</p>
+        <div class="review-form" id="review-form">
+            <h3>Slap a review in the box!</h3>
 
-          <form th:action="'/anime/'+ ${title}" id="usrform" method="post">
-              Name: <input type="text" name="usrname">
-              <input type="submit">
-          </form>
-          <br>
-          <textarea rows="4" cols="50" name="comment" form="usrform">
+            <form th:action="'/anime/'+ ${title}" id="usrform" method="post">
+                Name: <input type="text" name="usrname">
+                <input type="submit">
+            </form>
+            <br>
+            <textarea rows="4" cols="50" name="comment" form="usrform">
        </textarea>
-      </div>
-     <div>
-         <h3>Reviews/Comments:</h3>
-         <ul th:each="comment:${anime.comments}">
-             <li th:text="${comment.comment} + '-' + ${comment.name}"></li>
-         </ul>
         </div>
-      <div class="hashtag-form">
-          <h3>Add a Hashtag!</h3>
+        <div>
+            <h3>Reviews/Comments:</h3>
+            <ul th:each="comment:${anime.comments}">
+                <li th:text="${comment.comment} + '-' + ${comment.name}"></li>
+            </ul>
+        </div>
+        <div class="hashtag-form">
+            <h3>Hashtags!</h3>
+            <ul>
+                <li th:each="hashtags:${anime.hashtags}"><a th:href="'/list/'+ ${hashtags.name}"
+                                                            th:text="'#' +${hashtags.name}"></a></li>
+            </ul>
+            <h2>Add Your Own Hashtag!</h2>
 
-          <form th:action="'/anime/'+ ${title}" class="info" method="post">Type to add a hashtag!
-          <input type="text" id="hashtags" autocomplete="off">
-            <input type="submit">
-          </form>
-          <div class="tag-container">
-          </div>
-      </div>
-    <a  th:href="@{/HomePage}">Back to Home Page</a>
-  </main>
+            <form th:action="'/anime/hashtags/'+ ${anime.title}" class="info" method="post">Type to add a hashtag!
+                <input type="text" name="hashtags" autocomplete="off">
+                <input type="submit">
+
+                <div class="tag-container">
+                </div>
+            </form>
+        </div>
+        <a th:href="@{/HomePage}">Back to Home Page</a>
+    </main>
 </div>
 </body>
 </html>
