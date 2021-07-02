@@ -206,3 +206,13 @@ footer{
   position: absolute;
   bottom: 0%;
 }
+
+.red-text{
+  color: red;
+}
+.action-text{
+  color: rgb(70, 59, 59);
+}
+.fantasy-text{
+  color: blueviolet;
+}
