@@ -236,3 +236,11 @@ footer{
 .sOL-text{
   color: blanchedalmond;
 }
+
+a {
+    color:white;
+}
+
+a:visited{
+    color:black;
+}
